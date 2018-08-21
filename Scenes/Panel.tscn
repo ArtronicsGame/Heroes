@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/Root.gd" type="Script" id=1]
+[ext_resource path="res://Sprits/tree.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/UDPConnection.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/MasterPlayer.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/JoyStick.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Logic.tscn" type="PackedScene" id=6]
+
+[node name="Root" type="Node2D" index="0"]
+position = Vector2( 512, 300 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Script", "Transform", "Z Index", "script" ]
+__meta__ = {
+"_edit_horizontal_guides_": [ 300.0 ],
+"_edit_vertical_guides_": [ 512.0 ]
+}
+
+[node name="Tree" type="Sprite" parent="." index="0"]
+position = Vector2( 344, -316 )
+z_index = 1
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="UDPConnention" parent="." index="1" instance=ExtResource( 3 )]
+
+[node name="Player" parent="." index="2" instance=ExtResource( 4 )]
+position = Vector2( 680, 0 )
+
+[node name="JoyStickBack" parent="." index="3" instance=ExtResource( 5 )]
+visible = false
+scale = Vector2( 0.7, 0.7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Logic" parent="." index="4" instance=ExtResource( 6 )]
+
+[connection signal="on_message_received" from="UDPConnention" to="Logic" method="_on_message"]
+[connection signal="position_changed" from="Player" to="UDPConnention" method="_on_Player_position_changed"]
+[connection signal="on_joyStick_changed" from="JoyStickBack" to="Player" method="move"]
+[connection signal="change_pos" from="Logic" to="." method="_on_Logic_change_pos"]

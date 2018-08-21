@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprits/Joystick/big_circle.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/JoyStick.gd" type="Script" id=2]
+[ext_resource path="res://Sprits/Joystick/small_circle.png" type="Texture" id=3]
+
+[node name="JoyStickBack" type="Sprite"]
+modulate = Color( 1, 1, 1, 0.469608 )
+self_modulate = Color( 1, 1, 1, 0.834275 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Joystick" type="Sprite" parent="." index="0"]
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Script" ]
+
