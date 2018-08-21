@@ -5,7 +5,16 @@
 [node name="Area2D" instance=ExtResource( 1 )]
 _sections_unfolded = [ "Script", "Transform", "Z Index" ]
 
+[node name="AnimatedSprite" parent="." index="0"]
+z_as_relative = false
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="CollisionShape2D" parent="." index="1"]
+z_as_relative = false
+_sections_unfolded = [ "Transform", "Z Index" ]
+
 [node name="Camera2D" type="Camera2D" parent="." index="2"]
+z_as_relative = false
 anchor_mode = 1
 rotating = false
 current = true
@@ -28,5 +37,5 @@ drag_margin_bottom = 0.25
 editor_draw_screen = true
 editor_draw_limits = true
 editor_draw_drag_margin = true
-_sections_unfolded = [ "Editor", "Transform" ]
+_sections_unfolded = [ "Editor", "Transform", "Z Index" ]
 

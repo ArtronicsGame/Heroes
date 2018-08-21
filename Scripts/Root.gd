@@ -13,3 +13,9 @@ func _on_Logic_change_pos(idn, newPos, rotation):
 		newPlayer.set_name(id)
 		add_child(newPlayer)
 		get_node(id).position = newPos
+
+func _ready():
+	set_process(true)
+
+func _process(delta):
+	pass
