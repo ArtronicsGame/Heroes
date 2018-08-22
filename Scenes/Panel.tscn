@@ -17,6 +17,7 @@ __meta__ = {
 }
 
 [node name="YSort" type="YSort" parent="." index="0"]
+editor/display_folded = true
 sort_enabled = true
 _sections_unfolded = [ "Sort", "Transform", "Z Index" ]
 
