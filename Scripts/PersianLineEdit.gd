@@ -8,7 +8,7 @@ func _ready():
 	set_process_input(true)
 
 
-var text
+var text = ""
 func _on_LineEdit_text_changed(new_text):
 	text = text + new_text.substr($LineEdit.caret_position - 1, 1)
 	$LineEdit.text = StringCorrector.correct(text)
