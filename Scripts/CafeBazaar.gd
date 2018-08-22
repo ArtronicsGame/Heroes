@@ -14,7 +14,7 @@ signal on_iab_consume_finished(result, purchase)
 signal on_query_inventory_finished(result, inventory)
 
 func _ready():
-	#cafeBazaarIAB.setCallbackId(get_instance_id())
+	cafeBazaarIAB.setCallbackId(get_instance_id())
 	pass
 
 func startSetup(key):
