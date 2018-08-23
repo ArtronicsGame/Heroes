@@ -9,7 +9,7 @@ var udp
 signal position_changed(id, pos, rotation)
 
 func _ready():
-	udp = find_node_by_name(get_node('/root'), "UDPConnection")
+	udp = get_node("../UDPConnection")
 	udp.send({"_type" : "get_ready"})
 
 func _on_message(msg):
@@ -19,6 +19,7 @@ func _on_message(msg):
 	match type:
 		'update_pos':
 			print("Nice")
+			print(info)
 			pass
 		'id_callback':
 			id = info['_id']
@@ -30,19 +31,8 @@ func _on_message(msg):
 			print("Yeeeeeah : " + str(id))
 
 func send_transform(position, rotation):
-	if udp == null :
-		udp = find_node_by_name(get_node('/root'), "UDPConnection")
 	var type = 'update_pos'
 	var pos = {"x" : position.x, "y" : position.y}
 	var info = {"_id" : id, "_pos" : pos, "_rotation" : rotation}
 	var msg = {"_type" : type, "_info" : info}
 	udp.send(msg)
-
-func find_node_by_name(root, name):
-	if(root.get_name() == name): return root
-	for child in root.get_children():
-		if(child.get_name() == name):
-			return child
-		var found = find_node_by_name(child, name)
-		if(found): return found
-	return null
