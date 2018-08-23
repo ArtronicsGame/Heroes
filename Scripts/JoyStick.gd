@@ -11,6 +11,7 @@ signal on_joyStick_changed(moveVector)
 func _ready():
 	set_process(true)
 	set_process_input(true)
+	visible = false
 	self.connect("on_joyStick_changed", get_node("../YSort/Player"), "move")
 
 func _process(delta):
