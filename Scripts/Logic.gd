@@ -21,8 +21,8 @@ func _on_message(msg):
 		'update_pos':
 			var name = "Player" + str(info['_id'])
 			if has_node("../YSort/" + name):
-				var slavePlayer = get_node("../" + name)
-				slavePlayer.move(Vector2(info['_pos']['x'], info['_pos']['y']) - slavePlayer.position)
+				var slavePlayer = get_node("../YSort/" + name)
+				slavePlayer.moveSlave(Vector2(info['_pos']['x'], info['_pos']['y']))
 			else:
 				var slavePlayer = SlavePlayer.instance()
 				slavePlayer.set_name(name)

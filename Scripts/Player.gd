@@ -4,23 +4,43 @@ export (int) var speed  # How fast the player will move (pixels/sec).
 var screensize  # Size of the game window.
 var deltaT = 0
 
+export (int) var updateInterval = 500
+var lastSend 
+var lastAngle
+var lastPos
+var secondSame = false
+
+var angle = Vector2(0, 1)
+
 signal master_position_changed(newPos, newRotation)
 
 func _ready():
 	screensize = get_viewport_rect().size
 	set_process(true)
 	$AnimatedSprite.play();
-	emit_signal("master_position_changed", position, Vector2(0, 1))
+	lastSend = OS.get_ticks_msec()
 
 func _process(delta):
 	deltaT = delta
+	var now = OS.get_ticks_msec()
+	if now - lastSend > updateInterval:
+		lastSend = now
+		if lastPos == position and lastAngle == angle:
+			if !secondSame:
+				secondSame = true
+				emit_signal("master_position_changed", position, angle)
+		else:
+			secondSame = false
+			lastPos = position
+			lastAngle = angle
+			emit_signal("master_position_changed", position, angle)
 
 func move(movementVector):
 	var velocity = movementVector.normalized() * 0.5
+	angle = velocity
 	velocity += movementVector.normalized() * ((movementVector.length() - 20) / 80) 
 	if movementVector.length() > 20:
 		position += velocity * speed * deltaT
-		emit_signal("master_position_changed", position, movementVector.normalized())
 	
 	if velocity.x > 0.3 && movementVector.length() > 20:
 		if velocity.y > 0.3:
@@ -44,3 +64,34 @@ func move(movementVector):
 		else:
 			if $AnimatedSprite.animation.find("stand") == -1:
 				$AnimatedSprite.animation = $AnimatedSprite.animation + "-stand"
+
+func moveSlave(dest):
+	var delta = dest - position
+	if delta.length() == 0:
+		if $AnimatedSprite.animation.find("stand") == -1:
+				$AnimatedSprite.animation = $AnimatedSprite.animation + "-stand"
+		return
+	
+	delta = delta.normalized()
+	position = dest
+	
+	if delta.x > 0.3:
+		if delta.y > 0.3:
+			$AnimatedSprite.animation = "down-right"
+		elif delta.y < -0.3:
+			$AnimatedSprite.animation = "up-right"
+		else:
+			$AnimatedSprite.animation = "right"
+	elif delta.x < -0.3:
+		if delta.y > 0.3:
+			$AnimatedSprite.animation = "down-left"
+		elif delta.y < -0.3:
+			$AnimatedSprite.animation = "up-left"
+		else:
+			$AnimatedSprite.animation = "left"
+	else:
+		if delta.y > 0.3:
+			$AnimatedSprite.animation = "down"
+		elif delta.y < -0.3:
+			$AnimatedSprite.animation = "up"
+	

@@ -5,7 +5,7 @@
 [ext_resource path="res://Sprits/tree.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Logic.tscn" type="PackedScene" id=4]
 
-[node name="Root" type="Node2D" index="0"]
+[node name="Root" type="Node2D"]
 position = Vector2( 512, 300 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Script", "Transform", "Z Index", "script" ]
