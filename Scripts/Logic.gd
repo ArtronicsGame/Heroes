@@ -1,6 +1,7 @@
 extends Node2D
 
-const SlavePlayer = preload("res://Scenes/MasterPlayer.tscn")
+const MasterPlayer = preload("res://Scenes/MasterPlayer.tscn")
+const SlavePlayer = preload("res://Scenes/SlavePlayer.tscn")
 const Joystick = preload("res://Scenes/JoyStick.tscn")
 
 var id
@@ -18,12 +19,17 @@ func _on_message(msg):
 	var info = msg['_info']
 	match type:
 		'update_pos':
-			print("Nice")
-			print(info)
-			pass
+			var name = "Player" + str(info['_id'])
+			if has_node("../YSort/" + name):
+				var slavePlayer = get_node("../" + name)
+				slavePlayer.move(Vector2(info['_pos']['x'], info['_pos']['y']) - slavePlayer.position)
+			else:
+				var slavePlayer = SlavePlayer.instance()
+				slavePlayer.set_name(name)
+				get_node("../YSort").add_child(slavePlayer)
 		'id_callback':
 			id = info['_id']
-			var player = SlavePlayer.instance()
+			var player = MasterPlayer.instance()
 			player.set_name("Player")
 			get_node("../YSort").add_child(player)
 			get_node("..").add_child(Joystick.instance())
