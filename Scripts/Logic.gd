@@ -27,7 +27,7 @@ func _on_message(msg):
 			player.set_name("Player")
 			get_node("../YSort").add_child(player)
 			get_node("..").add_child(Joystick.instance())
-			player.connect("master_position_changed", get_node("../../Logic"), "send_transform")
+			player.connect("master_position_changed", get_node("."), "send_transform")
 			print("Yeeeeeah : " + str(id))
 
 func send_transform(position, rotation):

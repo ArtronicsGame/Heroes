@@ -31,7 +31,6 @@ func _exit_tree():
 	socketUDP.close()
 
 func send(msg):
-	print(msg)
 	if socketUDP.is_listening():
 		socketUDP.set_dest_address(IP_SERVER, PORT_SERVER)
 		socketUDP.put_var(JSON.print(msg))
