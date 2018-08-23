@@ -2,7 +2,7 @@ extends Node2D
 
 var slavePlayer = load("res://Scenes/SlavePlayer.tscn")
 
-func _on_Logic_change_pos(idn, newPos, rotation):
+"""func _on_Logic_change_pos(idn, newPos, rotation):
 	print(idn)
 	var id = str(idn)
 	if has_node(id):
@@ -12,7 +12,7 @@ func _on_Logic_change_pos(idn, newPos, rotation):
 		var newPlayer = slavePlayer.instance()
 		newPlayer.set_name(id)
 		add_child(newPlayer)
-		get_node(id).position = newPos
+		get_node(id).position = newPos"""
 
 func _ready():
 	set_process(true)

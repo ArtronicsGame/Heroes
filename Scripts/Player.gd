@@ -4,13 +4,13 @@ export (int) var speed  # How fast the player will move (pixels/sec).
 var screensize  # Size of the game window.
 var deltaT = 0
 
-signal position_changed(newPos)
+signal master_position_changed(newPos, newRotation)
 
 func _ready():
 	screensize = get_viewport_rect().size
 	set_process(true)
 	$AnimatedSprite.play();
-	emit_signal("position_changed", position)
+	emit_signal("master_position_changed", position, Vector2(0, 1))
 
 func _process(delta):
 	deltaT = delta
@@ -20,7 +20,7 @@ func move(movementVector):
 	velocity += movementVector.normalized() * ((movementVector.length() - 20) / 80) 
 	if movementVector.length() > 20:
 		position += velocity * speed * deltaT
-		emit_signal("position_changed", position)
+		emit_signal("master_position_changed", position, movementVector.normalized())
 	
 	if velocity.x > 0.3 && movementVector.length() > 20:
 		if velocity.y > 0.3:
