@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Root.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/UDPConnection.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprits/tree.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Logic.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/SlavePlayer.tscn" type="PackedScene" id=5]
 
 [node name="Root" type="Node2D"]
 position = Vector2( 512, 300 )
@@ -14,19 +15,21 @@ __meta__ = {
 "_edit_vertical_guides_": [ 512.0 ]
 }
 
-[node name="UDPConnection" parent="." index="0" instance=ExtResource( 2 )]
+[node name="UDPConnection" parent="." instance=ExtResource( 2 )]
 
-[node name="YSort" type="YSort" parent="." index="1"]
+[node name="YSort" type="YSort" parent="."]
 sort_enabled = true
 _sections_unfolded = [ "Sort", "Transform", "Z Index" ]
 
-[node name="Tree" type="Sprite" parent="YSort" index="0"]
+[node name="Tree" type="Sprite" parent="YSort"]
 position = Vector2( 338.623, 22.7256 )
 texture = ExtResource( 3 )
 centered = false
 offset = Vector2( -281.018, -552.726 )
 _sections_unfolded = [ "Offset", "Region", "Transform", "Z Index" ]
 
-[node name="Logic" parent="." index="2" instance=ExtResource( 4 )]
+[node name="Logic" parent="." instance=ExtResource( 4 )]
+
+[node name="Area2D" parent="." instance=ExtResource( 5 )]
 
 [connection signal="on_message_received" from="UDPConnection" to="Logic" method="_on_message"]
