@@ -13,7 +13,7 @@ func _ready():
 
 func _process(delta):
 	# get data
-	if socketUDP.get_available_packet_count() > 0:
+	while socketUDP.get_available_packet_count() > 0:
 		var array_bytes = socketUDP.get_packet()
 		var message = array_bytes.get_string_from_ascii()
 		var json = JSON.parse(message).result
