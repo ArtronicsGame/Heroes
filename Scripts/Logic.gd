@@ -22,7 +22,7 @@ func _on_message(msg):
 			var name = "Player" + str(info['_id'])
 			if has_node("../YSort/" + name):
 				var slavePlayer = get_node("../YSort/" + name)
-				slavePlayer.moveSlave(Vector2(info['_pos']['x'], info['_pos']['y']))
+				slavePlayer.moveSlave(Vector2(info['_pos']['x'], info['_pos']['y']), Vector2(info['_rotation']['x'], info['_rotation']['y']))
 			else:
 				var slavePlayer = SlavePlayer.instance()
 				slavePlayer.set_name(name)
@@ -39,6 +39,7 @@ func _on_message(msg):
 func send_transform(position, rotation):
 	var type = 'update_pos'
 	var pos = {"x" : position.x, "y" : position.y}
-	var info = {"_id" : id, "_pos" : pos, "_rotation" : rotation}
+	var rot = {"x" : rotation.x, "y" : rotation.y}
+	var info = {"_id" : id, "_pos" : pos, "_rotation" : rot}
 	var msg = {"_type" : type, "_info" : info}
 	udp.send(msg)

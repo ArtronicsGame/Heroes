@@ -35,34 +35,47 @@ func _process(delta):
 			lastAngle = angle
 			emit_signal("master_position_changed", position, angle)
 
+var direction_angle = { "down-right" : 45,
+						"up-right" : -45,
+						"right" : 0,
+						"down-left" : 135,
+						"up-left" : -135,
+						"left" : -180,
+						"down" : 90,
+						"up" : -90}
+
 func move(movementVector):
 	var velocity = movementVector.normalized() * 0.5
-	angle = velocity
+	if movementVector.length() != 0:
+		angle = movementVector.normalized()
 	velocity += movementVector.normalized() * ((movementVector.length() - 20) / 80) 
-	print(str(rad2deg($Aim.rotation)) + " : " + str(movementVector.normalized().x) + ", " + str(movementVector.normalized().y))
-	$Aim.rotation = atan2(velocity.x, -velocity.y) - deg2rad(90)
+	if movementVector.length() == 0:
+		$Aim.rotation = deg2rad(direction_angle[$AnimatedSprite.animation.replace("-stand", "")])
+	else:
+		$Aim.rotation = atan2(velocity.x, -velocity.y) - deg2rad(90)
 	if movementVector.length() > 20:
 		position += velocity * speed * deltaT
 	
-	if velocity.x > 0.3 && movementVector.length() > 20:
-		if velocity.y > 0.3:
+	if angle.x > 0.3:
+		if angle.y > 0.3:
 			$AnimatedSprite.animation = "down-right"
-		elif velocity.y < -0.3:
+		elif angle.y < -0.3:
 			$AnimatedSprite.animation = "up-right"
 		else:
 			$AnimatedSprite.animation = "right"
-	elif velocity.x < -0.3 && movementVector.length() > 20:
-		if velocity.y > 0.3:
+	elif angle.x < -0.3:
+		if angle.y > 0.3:
 			$AnimatedSprite.animation = "down-left"
-		elif velocity.y < -0.3:
+		elif angle.y < -0.3:
 			$AnimatedSprite.animation = "up-left"
 		else:
 			$AnimatedSprite.animation = "left"
 	else:
-		if velocity.y > 0.3 && movementVector.length() > 20:
+		if angle.y > 0.3:
 			$AnimatedSprite.animation = "down"
-		elif velocity.y < -0.3 && movementVector.length() > 20:
+		elif angle.y < -0.3:
 			$AnimatedSprite.animation = "up"
-		else:
-			if $AnimatedSprite.animation.find("stand") == -1:
+	
+	if movementVector.length() < 20:
+		if $AnimatedSprite.animation.find("stand") == -1:
 				$AnimatedSprite.animation = $AnimatedSprite.animation + "-stand"
