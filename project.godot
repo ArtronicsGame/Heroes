@@ -20,7 +20,7 @@ modules="org/godotengine/godot/GodotPaymentV3,org/godotengine/godot/CafeBazaarGo
 [application]
 
 config/name="Heroes"
-run/main_scene="res://Scenes/MatchScene.tscn"
+run/main_scene="res://Scenes/SplashScreen.tscn"
 boot_splash/image="res://splash.png"
 boot_splash/fullsize=false
 boot_splash/bg_color=Color( 0.313726, 0.313726, 0.313726, 1 )
