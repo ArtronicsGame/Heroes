@@ -21,8 +21,9 @@ modules="org/godotengine/godot/GodotPaymentV3,org/godotengine/godot/CafeBazaarGo
 
 config/name="Heroes"
 run/main_scene="res://Scenes/Panel.tscn"
-boot_splash/image="res://icon.png"
+boot_splash/image="res://splash.png"
 boot_splash/fullsize=false
+boot_splash/bg_color=Color( 0.313726, 0.313726, 0.313726, 1 )
 config/icon="res://icon.png"
 
 [display]
