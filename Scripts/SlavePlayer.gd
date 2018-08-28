@@ -31,9 +31,26 @@ func _process(delta):
 func moveSlave(dest, angle):
 	var delta = dest - position
 	if delta.length() == 0:
-		if $AnimatedSprite.animation.find("stand") == -1:
-			$AnimatedSprite.animation = $AnimatedSprite.animation + "-stand"
-			moving = false
+		moving = false
+		if angle.x > 0.3:
+			if angle.y > 0.3:
+				$AnimatedSprite.animation = "down-right-stand"
+			elif angle.y < -0.3:
+				$AnimatedSprite.animation = "up-right-stand"
+			else:
+				$AnimatedSprite.animation = "right-stand"
+		elif angle.x < -0.3:
+			if angle.y > 0.3:
+				$AnimatedSprite.animation = "down-left-stand"
+			elif angle.y < -0.3:
+				$AnimatedSprite.animation = "up-left-stand"
+			else:
+				$AnimatedSprite.animation = "left-stand"
+		else:
+			if angle.y > 0.3:
+				$AnimatedSprite.animation = "down-stand"
+			elif angle.y < -0.3:
+				$AnimatedSprite.animation = "up-stand"
 		return
 	
 	destination = dest

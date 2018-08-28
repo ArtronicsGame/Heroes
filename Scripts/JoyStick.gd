@@ -61,7 +61,11 @@ func _input(event):
 	elif event is InputEventScreenDrag:
 		if joyStickIndex == event.index:
 			endPos = event.position
-			movementVector = endPos - startPos
-			if movementVector.length() > 60:
-				movementVector = movementVector.normalized() * 60
-			$Joystick.position = movementVector
+			var temp = endPos - startPos
+			if temp.length() > 60:
+				temp = temp.normalized() * 60
+			$Joystick.position = temp
+			
+			if aimingMode:
+				temp = temp.normalized() * 10
+			movementVector = temp
