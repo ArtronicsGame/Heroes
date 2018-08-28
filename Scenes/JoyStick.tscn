@@ -4,7 +4,7 @@
 [ext_resource path="res://Sprits/Joystick/big_circle.png" type="Texture" id=2]
 [ext_resource path="res://Sprits/Joystick/small_circle.png" type="Texture" id=3]
 
-[node name="JoyStickContainer" type="Node2D"]
+[node name="JoyStickContainer" type="Node2D" index="0"]
 self_modulate = Color( 1, 1, 1, 0.835294 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Script", "Transform", "Visibility" ]
