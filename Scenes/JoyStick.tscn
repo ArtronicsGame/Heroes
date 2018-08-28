@@ -4,15 +4,17 @@
 [ext_resource path="res://Scripts/JoyStick.gd" type="Script" id=2]
 [ext_resource path="res://Sprits/Joystick/small_circle.png" type="Texture" id=3]
 
-[node name="JoyStickBack" type="Sprite" index="0"]
+[node name="JoyStickBack" type="Sprite"]
 modulate = Color( 1, 1, 1, 0.469608 )
 self_modulate = Color( 1, 1, 1, 0.834275 )
 scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
+SwitchTimeInterval = 500
+SwitchDistIntervalRatio = 0.0133333
 
 [node name="Joystick" type="Sprite" parent="." index="0"]
 texture = ExtResource( 3 )
-_sections_unfolded = [ "Script" ]
+_sections_unfolded = [ "Animation", "Offset", "Region", "Script", "Visibility" ]
 

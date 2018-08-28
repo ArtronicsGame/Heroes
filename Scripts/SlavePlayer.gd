@@ -6,18 +6,27 @@ var screensize  # Size of the game window.
 var lastMove
 var moving = false
 
+var destination
+
 func _ready():
+	destination = position
 	screensize = get_viewport_rect().size
 	lastMove = OS.get_ticks_msec()
 	$AnimatedSprite.play();
 	set_process(true)
 
 func _process(delta):
+	var maxDelta = 1.2 * speed * delta
+	var movementVec = destination - position
+	if movementVec.length() > maxDelta:
+		position += movementVec.normalized() * maxDelta
+	else:
+		position += movementVec
+	
 	if moving and OS.get_ticks_msec() - lastMove > 500:
 		moving = false 
 		if $AnimatedSprite.animation.find("stand") == -1:
 			$AnimatedSprite.animation = $AnimatedSprite.animation + "-stand"
-	pass
 
 func moveSlave(dest, angle):
 	var delta = dest - position
@@ -27,7 +36,7 @@ func moveSlave(dest, angle):
 			moving = false
 		return
 	
-	position = dest
+	destination = dest
 	
 	lastMove = OS.get_ticks_msec()
 	moving = true
