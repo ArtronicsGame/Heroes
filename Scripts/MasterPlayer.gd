@@ -1,4 +1,4 @@
-extends Area2D
+extends KinematicBody2D
 
 export (int) var speed  # How fast the player will move (pixels/sec).
 var screensize  # Size of the game window.
@@ -11,6 +11,15 @@ var lastPos
 var secondSame = false
 
 var angle = Vector2(0, 1)
+
+var direction_angle = { "down-right" : 45,
+						"up-right" : -45,
+						"right" : 0,
+						"down-left" : 135,
+						"up-left" : -135,
+						"left" : -180,
+						"down" : 90,
+						"up" : -90}
 
 signal master_position_changed(newPos, newRotation)
 
@@ -35,15 +44,6 @@ func _process(delta):
 			lastAngle = angle
 			emit_signal("master_position_changed", position, angle)
 
-var direction_angle = { "down-right" : 45,
-						"up-right" : -45,
-						"right" : 0,
-						"down-left" : 135,
-						"up-left" : -135,
-						"left" : -180,
-						"down" : 90,
-						"up" : -90}
-
 func move(movementVector):
 	var velocity = movementVector.normalized() * 0.5
 	if movementVector.length() != 0:
@@ -54,7 +54,7 @@ func move(movementVector):
 	else:
 		$Aim.rotation = atan2(velocity.x, -velocity.y) - deg2rad(90)
 	if movementVector.length() > 20:
-		position += velocity * speed * deltaT
+		move_and_slide(velocity * speed * deltaT)
 	
 	if angle.x > 0.3:
 		if angle.y > 0.3:

@@ -1,4 +1,4 @@
-extends Sprite
+extends Node2D
 
 var movementVector = Vector2(0, 0)
 var joyStickIndex = -1
@@ -11,6 +11,9 @@ export (int) var SwitchTimeInterval = 500
 export (float) var SwitchDistIntervalRatio = 1.0/75
 var SwitchDistInterval 
 
+export (Color) var AimColor = Color(255, 0, 0)
+export (Color) var MoveColor = Color(0 ,255, 0)
+
 var lastPos = Vector2(0, 0)
 var lastTime = -10000
 
@@ -19,6 +22,7 @@ var aimingMode = false
 signal on_joyStick_changed(moveVector)
 
 func _ready():
+	self.modulate = MoveColor
 	SwitchDistInterval = (get_viewport_rect().size * SwitchDistIntervalRatio).length()
 	set_process(true)
 	set_process_input(true)
@@ -26,8 +30,7 @@ func _ready():
 	self.connect("on_joyStick_changed", get_node("../YSort/Player"), "move")
 
 func _process(delta):
-	print(str(aimingMode))
-	position = startPos  - get_node("..").position - get_viewport_transform().get_origin()
+	$JoyStickBack.position = startPos  - get_node("..").position - get_viewport_transform().get_origin()
 	emit_signal("on_joyStick_changed", movementVector)
 
 func _input(event):
@@ -38,9 +41,9 @@ func _input(event):
 				if (lastPos - event.position).length() < SwitchDistInterval:
 					aimingMode = !aimingMode
 					if aimingMode:
-						self.modulate = Color(255, 0, 0)
+						self.modulate = AimColor
 					else:
-						self.modulate = Color(0, 255, 0)
+						self.modulate = MoveColor
 	
 	if event is InputEventScreenTouch:
 		lastPos = event.position
@@ -51,8 +54,8 @@ func _input(event):
 			startPos = event.position
 			endPos = event.position
 			joyStickIndex = event.index
-			position = startPos
-			$Joystick.position = Vector2(0, 0)
+			$JoyStickBack.position = startPos
+			$JoyStickBack/Joystick.position = Vector2(0, 0)
 			visible = true
 		elif joyStickIndex == event.index && !event.is_pressed():
 			movementVector = Vector2(0, 0)
@@ -64,7 +67,7 @@ func _input(event):
 			var temp = endPos - startPos
 			if temp.length() > 60:
 				temp = temp.normalized() * 60
-			$Joystick.position = temp
+			$JoyStickBack/Joystick.position = temp
 			
 			if aimingMode:
 				temp = temp.normalized() * 10

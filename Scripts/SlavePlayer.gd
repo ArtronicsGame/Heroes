@@ -1,4 +1,4 @@
-extends Area2D
+extends KinematicBody2D
 
 export (int) var speed  # How fast the player will move (pixels/sec).
 var screensize  # Size of the game window.
@@ -23,10 +23,8 @@ func _process(delta):
 	else:
 		position += movementVec
 		
-	if movementVec.length() == 0 and $AnimatedSprite.animation.find("stand") == -1:
-		$AnimatedSprite.animation = $AnimatedSprite.animation + "-stand"
 	
-	if moving and OS.get_ticks_msec() - lastMove > 500:
+	if moving and OS.get_ticks_msec() - lastMove > 300:
 		moving = false 
 		if $AnimatedSprite.animation.find("stand") == -1:
 			$AnimatedSprite.animation = $AnimatedSprite.animation + "-stand"
