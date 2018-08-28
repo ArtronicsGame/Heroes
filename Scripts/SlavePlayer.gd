@@ -22,6 +22,9 @@ func _process(delta):
 		position += movementVec.normalized() * maxDelta
 	else:
 		position += movementVec
+		
+	if movementVec.length() == 0 and $AnimatedSprite.animation.find("stand") == -1:
+		$AnimatedSprite.animation = $AnimatedSprite.animation + "-stand"
 	
 	if moving and OS.get_ticks_msec() - lastMove > 500:
 		moving = false 

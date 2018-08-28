@@ -11,7 +11,7 @@ scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
-SwitchTimeInterval = 500
+SwitchTimeInterval = 300
 SwitchDistIntervalRatio = 0.0133333
 
 [node name="Joystick" type="Sprite" parent="." index="0"]
