@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/Mask.png-a5ddafaa3fc8ee752b4f1ac6379466f0.res"
+
+[deps]
+
+source_file="res://Sprits/Menu/Mask.png"
+dest_files=[ "res://.import/Mask.png-a5ddafaa3fc8ee752b4f1ac6379466f0.res" ]
+
+[params]
+
+create_from=0
+threshold=0.5
