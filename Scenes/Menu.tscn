@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Sprits/Menu/StartBtn.png" type="Texture" id=1]
 [ext_resource path="res://Sprits/Menu/ClickedStartBtn.png" type="Texture" id=2]
 [ext_resource path="res://Sprits/Menu/Mask.png" type="BitMap" id=3]
+[ext_resource path="res://Scenes/PersianLineEdit.tscn" type="PackedScene" id=4]
 
 [node name="Control" type="Control"]
 anchor_left = 0.0
@@ -36,10 +37,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 384.0
-margin_top = 104.0
-margin_right = 896.0
-margin_bottom = 616.0
+margin_left = 580.0
+margin_top = 535.0
+margin_right = 734.0
+margin_bottom = 689.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -56,4 +57,6 @@ texture_pressed = ExtResource( 2 )
 texture_click_mask = ExtResource( 3 )
 expand = true
 _sections_unfolded = [ "Rect", "Textures" ]
+
+[node name="PersianLineEdit" parent="Panel" instance=ExtResource( 4 )]
 
