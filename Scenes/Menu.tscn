@@ -1,11 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Sprits/Menu/Background.png" type="Texture" id=1]
-[ext_resource path="res://Sprits/Menu/StartBtn.png" type="Texture" id=2]
-[ext_resource path="res://Sprits/Menu/StartBtnPressed.png" type="Texture" id=3]
-[ext_resource path="res://Sprits/Menu/Mask.png" type="BitMap" id=4]
+[ext_resource path="res://Sprits/Menu/StartBtn.png" type="Texture" id=1]
+[ext_resource path="res://Sprits/Menu/ClickedStartBtn.png" type="Texture" id=2]
+[ext_resource path="res://Sprits/Menu/Mask.png" type="BitMap" id=3]
 
-[node name="Menu" type="Control"]
+[node name="Control" type="Control"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -17,21 +16,30 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="Background" type="Sprite" parent="."]
-position = Vector2( 640, 360 )
-scale = Vector2( 0.66666, 0.66666 )
-texture = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="Panel" type="Panel" parent="."]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 390.0
-margin_top = 110.0
-margin_right = 890.0
-margin_bottom = 610.0
+margin_right = 1280.0
+margin_bottom = 720.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="TextureButton" type="TextureButton" parent="Panel"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 384.0
+margin_top = 104.0
+margin_right = 896.0
+margin_bottom = 616.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -43,9 +51,9 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 2 )
-texture_pressed = ExtResource( 3 )
-texture_click_mask = ExtResource( 4 )
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 2 )
+texture_click_mask = ExtResource( 3 )
 expand = true
-_sections_unfolded = [ "Rect", "Textures", "texture_click_mask" ]
+_sections_unfolded = [ "Rect", "Textures" ]
 

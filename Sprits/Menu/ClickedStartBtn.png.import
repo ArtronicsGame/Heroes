@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/StartBtnPressed.png-0640f63d2074eec7b86ca8c38c7fee59.stex"
+path="res://.import/ClickedStartBtn.png-cf5ef687d543fb2eb9bf2e855f09c0ee.stex"
 
 [deps]
 
-source_file="res://Sprits/Menu/StartBtnPressed.png"
-dest_files=[ "res://.import/StartBtnPressed.png-0640f63d2074eec7b86ca8c38c7fee59.stex" ]
+source_file="res://Sprits/Menu/ClickedStartBtn.png"
+dest_files=[ "res://.import/ClickedStartBtn.png-cf5ef687d543fb2eb9bf2e855f09c0ee.stex" ]
 
 [params]
 
