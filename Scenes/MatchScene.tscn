@@ -1,17 +1,21 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Root.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/UDPConnection.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprits/tree.png" type="Texture" id=3]
-[ext_resource path="res://Scenes/Logic.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sprits/TileSets/custom.tres" type="TileSet" id=4]
+[ext_resource path="res://Sprits/TileSets/OuterGravelTS.tres" type="TileSet" id=5]
+[ext_resource path="res://Sprits/TileSets/InnerGrassTS.tres" type="TileSet" id=6]
+[ext_resource path="res://Sprits/TileSets/OuterGrass.tres" type="TileSet" id=7]
+[ext_resource path="res://Scenes/Logic.tscn" type="PackedScene" id=8]
 
 [node name="Root" type="Node2D"]
 position = Vector2( 512, 300 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Script", "Transform", "Z Index", "script" ]
 __meta__ = {
-"_edit_horizontal_guides_": [ 300.0 ],
-"_edit_vertical_guides_": [ 512.0 ]
+"_edit_horizontal_guides_": [  ],
+"_edit_vertical_guides_": [  ]
 }
 
 [node name="UDPConnection" parent="." instance=ExtResource( 2 )]
@@ -21,7 +25,10 @@ sort_enabled = true
 _sections_unfolded = [ "Sort", "Transform", "Z Index" ]
 
 [node name="Tree" type="Sprite" parent="YSort"]
-position = Vector2( 338.623, 22.7256 )
+editor/display_folded = true
+visible = false
+position = Vector2( 209.176, 168.29 )
+scale = Vector2( 1.5544, 1.5544 )
 texture = ExtResource( 3 )
 centered = false
 offset = Vector2( -281.018, -552.726 )
@@ -47,6 +54,136 @@ _sections_unfolded = [ "polygon" ]
 build_mode = 0
 polygon = PoolVector2Array( -144.07, -2.55301, -137.968, -3.10779, -126.595, -3.66257, -120.77, -1.99823, -120.77, 2.71741, -129.924, 3.82697, -137.69, 3.82697, -143.516, 0.498291 )
 
-[node name="Logic" parent="." instance=ExtResource( 4 )]
+[node name="TileMap2" type="TileMap" parent="YSort"]
+mode = 1
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 128, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -262147, 26, 0, -262146, 74, 0, -196611, 2, 0, -196610, 72, 0, -131074, 24, 0, -131073, 74, 0, -65537, 72, 0, -1, 21, 0, -65536, 11, 0 )
+_sections_unfolded = [ "Cell" ]
+
+[node name="OuterGravel" type="TileMap" parent="."]
+visible = false
+z_index = -1000
+z_as_relative = false
+mode = 1
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 840, 555 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -720890, 4, 0, -720889, 4, 0, -720888, 4, 0, -720887, 7, 0, -655351, 6, 0, -589815, 6, 0, -524283, 2, 0, -524278, 7, 0, -458748, 9, 0, -458742, 6, 0, -393211, 9, 0, -393206, 6, 0, -327674, 9, 0, -327670, 6, 0, -262140, 8, 0, -262139, 8, 0, -262138, 8, 0, -262137, 9, 0, -262134, 6, 0, -196604, 8, 0, -196603, 8, 0, -196600, 9, 0, -196598, 6, 0, -131063, 9, 0, -131062, 6, 0, -65536, 9, 0, -65535, 9, 0, -65534, 0, 0, -65533, 9, 0, -65532, 9, 0, -65531, 9, 0, -65530, 9, 0, -65529, 9, 0, -65528, 9, 0, -65527, 1, 0, -65526, 9, 0, 0, 9, 0, 1, 9, 0, 2, 9, 0, 3, 9, 0, 4, 9, 0, 5, 9, 0, 6, 9, 0, 7, 9, 0, 65539, 9, 0 )
+_sections_unfolded = [ "Cell", "Z Index" ]
+
+[node name="TileMap" type="TileMap" parent="."]
+visible = false
+mode = 0
+tile_set = null
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray(  )
+
+[node name="Inner" type="TileMap" parent="."]
+visible = false
+z_index = -1000
+z_as_relative = false
+mode = 1
+tile_set = ExtResource( 6 )
+cell_size = Vector2( 840, 555 )
+cell_quadrant_size = 13
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -720891, 2, 0, -720890, 5, 0, -720889, 5, 0, -720888, 5, 0, -720887, 8, 0, -655355, 1, 0, -655354, 4, 0, -655353, 4, 0, -655352, 4, 0, -655351, 7, 0, -589819, 1, 0, -589818, 4, 0, -589817, 4, 0, -589816, 4, 0, -589815, 7, 0, -524288, 2, 0, -524287, 5, 0, -524286, 5, 0, -524285, 5, 0, -524284, 5, 0, -524283, 4, 0, -524282, 4, 0, -524281, 4, 0, -524280, 4, 0, -524279, 4, 0, -524278, 8, 0, -458752, 1, 0, -458751, 4, 0, -458750, 4, 0, -458749, 4, 0, -458748, 4, 0, -458747, 4, 0, -458746, 4, 0, -458745, 4, 0, -458744, 4, 0, -458743, 4, 0, -458742, 7, 0, -393216, 1, 0, -393215, 4, 0, -393214, 4, 0, -393213, 4, 0, -393212, 4, 0, -393211, 4, 0, -393210, 4, 0, -393209, 4, 0, -393208, 4, 0, -393207, 4, 0, -393206, 7, 0, -327680, 1, 0, -327679, 4, 0, -327678, 4, 0, -327677, 4, 0, -327676, 4, 0, -327675, 4, 0, -327674, 4, 0, -327673, 4, 0, -327672, 4, 0, -327671, 4, 0, -327670, 7, 0, -262144, 1, 0, -262143, 4, 0, -262142, 4, 0, -262141, 4, 0, -262140, 4, 0, -262139, 4, 0, -262138, 4, 0, -262137, 4, 0, -262136, 4, 0, -262135, 4, 0, -262134, 7, 0, -196608, 1, 0, -196607, 4, 0, -196606, 4, 0, -196605, 4, 0, -196604, 4, 0, -196603, 4, 0, -196602, 4, 0, -196601, 4, 0, -196600, 4, 0, -196599, 4, 0, -196598, 7, 0, -131072, 1, 0, -131071, 4, 0, -131070, 4, 0, -131069, 4, 0, -131068, 4, 0, -131067, 4, 0, -131066, 4, 0, -131065, 4, 0, -131064, 4, 0, -131063, 4, 0, -131062, 7, 0, -65536, 0, 0, -65535, 3, 0, -65534, 3, 0, -65533, 3, 0, -65532, 3, 0, -65531, 3, 0, -65530, 3, 0, -65529, 3, 0, -65528, 3, 0, -65527, 3, 0, -65526, 6, 0, 4, 5, 0, 65539, 5, 0, 65540, 4, 0 )
+_sections_unfolded = [ "Cell", "Z Index" ]
+
+[node name="OuterGrass" type="TileMap" parent="."]
+visible = false
+mode = 1
+tile_set = ExtResource( 7 )
+cell_size = Vector2( 840, 555 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 7, 3, 0, 65539, 5, 0 )
+_sections_unfolded = [ "Cell" ]
+
+[node name="GrassTM2" type="TileMap" parent="."]
+visible = false
+z_index = -1000
+z_as_relative = false
+mode = 1
+tile_set = ExtResource( 6 )
+cell_size = Vector2( 840, 555 )
+cell_quadrant_size = 13
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -720891, 2, 0, -720890, 5, 0, -720889, 5, 0, -720888, 5, 0, -720887, 8, 0, -655355, 1, 0, -655354, 4, 0, -655353, 4, 0, -655352, 4, 0, -655351, 7, 0, -589819, 1, 0, -589818, 4, 0, -589817, 4, 0, -589816, 4, 0, -589815, 7, 0, -524288, 2, 0, -524287, 5, 0, -524286, 5, 0, -524285, 5, 0, -524284, 5, 0, -524283, 4, 0, -524282, 4, 0, -524281, 4, 0, -524280, 4, 0, -524279, 4, 0, -524278, 8, 0, -458752, 1, 0, -458751, 4, 0, -458750, 4, 0, -458749, 4, 0, -458748, 4, 0, -458747, 4, 0, -458746, 4, 0, -458745, 4, 0, -458744, 4, 0, -458743, 4, 0, -458742, 7, 0, -393216, 1, 0, -393215, 4, 0, -393214, 4, 0, -393213, 4, 0, -393212, 4, 0, -393211, 4, 0, -393210, 4, 0, -393209, 4, 0, -393208, 4, 0, -393207, 4, 0, -393206, 7, 0, -327680, 1, 0, -327679, 4, 0, -327678, 4, 0, -327677, 4, 0, -327676, 4, 0, -327675, 4, 0, -327674, 4, 0, -327673, 4, 0, -327672, 4, 0, -327671, 4, 0, -327670, 7, 0, -262144, 1, 0, -262143, 4, 0, -262142, 4, 0, -262141, 4, 0, -262140, 4, 0, -262139, 4, 0, -262138, 4, 0, -262137, 4, 0, -262136, 4, 0, -262135, 4, 0, -262134, 7, 0, -196608, 1, 0, -196607, 4, 0, -196606, 4, 0, -196605, 4, 0, -196604, 4, 0, -196603, 4, 0, -196602, 4, 0, -196601, 4, 0, -196600, 4, 0, -196599, 4, 0, -196598, 7, 0, -131072, 1, 0, -131071, 4, 0, -131070, 4, 0, -131069, 4, 0, -131068, 4, 0, -131067, 4, 0, -131066, 4, 0, -131065, 4, 0, -131064, 4, 0, -131063, 4, 0, -131062, 7, 0, -65536, 0, 0, -65535, 3, 0, -65534, 3, 0, -65533, 3, 0, -65532, 3, 0, -65531, 3, 0, -65530, 3, 0, -65529, 3, 0, -65528, 3, 0, -65527, 3, 0, -65526, 6, 0, 3, 2, 0, 4, 5, 0, 5, 5, 0, 6, 5, 0, 8, 5, 0, 9, 5, 0, 65536, 5, 0, 65537, 5, 0, 65538, 5, 0, 65539, 1, 0, 65540, 4, 0 )
+_sections_unfolded = [ "Cell", "Z Index" ]
+
+[node name="Logic" parent="." instance=ExtResource( 8 )]
 
 [connection signal="on_message_received" from="UDPConnection" to="Logic" method="_on_message"]

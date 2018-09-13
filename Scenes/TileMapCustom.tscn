@@ -1,0 +1,653 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Sprits/Tiles/pgw.png" type="Texture" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="pgw1" type="Sprite" parent="."]
+position = Vector2( 99.3442, 103.648 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw2" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 1
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw3" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 2
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw4" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 3
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw5" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 4
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw6" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 5
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw7" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 6
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw8" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 7
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw9" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 8
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw10" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 9
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw11" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 10
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw12" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 11
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw13" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 12
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw14" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 13
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw15" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 14
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw16" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 15
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw17" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 16
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw18" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 17
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw19" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 18
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw20" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 19
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw21" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 20
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw22" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 21
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw23" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 22
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw24" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 23
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw25" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 24
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw26" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 25
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw27" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 26
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw28" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 27
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw29" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 28
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw30" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 29
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw31" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 30
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw32" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 31
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw33" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 32
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw34" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 33
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw35" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 34
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw36" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 35
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw37" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 36
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw38" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 37
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw39" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 38
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw40" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 39
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw41" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 40
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw42" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 41
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw43" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 42
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw44" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 43
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw45" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 44
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw46" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 45
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw47" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 46
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw48" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 47
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw49" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 48
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw50" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 49
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw51" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 50
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw52" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 51
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw53" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 52
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw54" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 53
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw55" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 54
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw56" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 55
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw57" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 56
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw58" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 57
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw59" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 58
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw60" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 59
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw61" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 60
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw62" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 61
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw63" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 62
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw64" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 63
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw65" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 64
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw66" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 65
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw67" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 66
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw68" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 67
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw69" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 68
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw70" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 69
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw71" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 70
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw72" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 71
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw73" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 72
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw74" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 73
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw75" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 74
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw76" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 75
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw77" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 76
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw78" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 77
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw79" type="Sprite" parent="."]
+position = Vector2( 266.191, 100.721 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 78
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw80" type="Sprite" parent="."]
+position = Vector2( 888.844, 641.746 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 79
+_sections_unfolded = [ "Animation" ]
+
+[node name="pgw81" type="Sprite" parent="."]
+position = Vector2( 1148.92, 658.831 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 9
+frame = 80
+_sections_unfolded = [ "Animation" ]
+
