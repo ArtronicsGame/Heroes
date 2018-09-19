@@ -4,7 +4,7 @@
 [ext_resource path="res://Sprits/Joystick/big_circle.png" type="Texture" id=2]
 [ext_resource path="res://Sprits/Joystick/small_circle.png" type="Texture" id=3]
 
-[node name="JoyStickContainer" type="Node2D" index="0"]
+[node name="JoyStickContainer" type="Node2D"]
 self_modulate = Color( 1, 1, 1, 0.835294 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Script", "Transform", "Visibility" ]
@@ -13,13 +13,12 @@ SwitchDistIntervalRatio = 0.0133333
 AimColor = Color( 1, 0, 0, 1 )
 MoveColor = Color( 0, 1, 0, 1 )
 
-[node name="JoyStickBack" type="Sprite" parent="." index="0"]
-editor/display_folded = true
+[node name="JoyStickBack" type="Sprite" parent="."]
 self_modulate = Color( 1, 1, 1, 0.834275 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Script", "Transform", "Visibility" ]
 
-[node name="Joystick" type="Sprite" parent="JoyStickBack" index="0"]
+[node name="Joystick" type="Sprite" parent="JoyStickBack"]
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Animation", "Offset", "Region", "Script", "Transform", "Visibility" ]
 

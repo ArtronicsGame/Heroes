@@ -32,7 +32,7 @@ func _ready():
 	self.connect("on_joyStick_changed", get_node("../YSort/Player"), "move")
 
 func _process(delta):
-	$JoyStickBack.position = startPos  - get_node("..").position - get_viewport_transform().get_origin()
+	$JoyStickBack.position = startPos - get_node("..").position - get_viewport_transform().get_origin()
 	emit_signal("on_joyStick_changed", movementVector)
 
 func _input(event):

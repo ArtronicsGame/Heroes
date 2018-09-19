@@ -37,6 +37,6 @@ paused = false
 expand = true
 buffering_msec = 500
 bus = "Master"
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "stream" ]
 
 [connection signal="finished" from="VideoPlayer" to="." method="_on_VideoPlayer_finished"]

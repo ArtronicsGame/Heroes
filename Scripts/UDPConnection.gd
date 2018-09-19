@@ -1,6 +1,6 @@
 extends Node2D
 
-var IP_SERVER = '185.55.226.196'
+var IP_SERVER = '185.55.226.137'
 var PORT_SERVER = 8008
 var PORT_CLIENT = 8008
 var socketUDP = PacketPeerUDP.new()
