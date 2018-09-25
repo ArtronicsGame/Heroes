@@ -1,8 +1,8 @@
 extends Node2D
 
-const MasterPlayer = preload("res://Scenes/MasterPlayer.tscn")
-const SlavePlayer = preload("res://Scenes/SlavePlayer.tscn")
-const Joystick = preload("res://Scenes/JoyStick.tscn")
+const MasterPlayer = preload("res://Scenes/Objects/Players/MasterPlayer.tscn")
+const SlavePlayer = preload("res://Scenes/Objects/Players/SlavePlayer.tscn")
+const Joystick = preload("res://Scenes/Objects/Utils/JoyStick.tscn")
 
 var id
 var udp
