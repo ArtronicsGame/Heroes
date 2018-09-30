@@ -206,7 +206,7 @@ group = null
 flat = false
 align = 1
 script = ExtResource( 4 )
-_sections_unfolded = [ "Custom Colors", "Custom Fonts", "Hint", "Rect", "custom_fonts/font" ]
+_sections_unfolded = [ "Custom Colors", "Custom Fonts", "Size Flags", "custom_fonts", "custom_fonts/font" ]
 
 [node name="CharacterPnl" type="Panel" parent="Panel"]
 anchor_left = 0.0

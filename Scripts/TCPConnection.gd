@@ -85,3 +85,4 @@ func _ready():
 func Send(data):
 	if (data != null):
 		peerstream.put_var(data)
+
