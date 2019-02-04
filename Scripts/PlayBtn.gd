@@ -1,7 +1,7 @@
 extends Button
 
 func _on_PlayBtn_button_down():
-	get_node("../TCPConnection").Send({
+	TCPConnection.Send({
 		"_type" : "PlayerController.new",
 		"_info" : {"username" : "Mobin"}
 	})

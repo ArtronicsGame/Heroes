@@ -10,7 +10,8 @@ var udp
 signal position_changed(id, pos, rotation)
 
 func _ready():
-	udp = get_node("../UDPConnection")
+	udp = UDPConnection
+	udp.connect("on_message_received", self, "_on_message")
 	#udp.send({"_type" : "get_ready"})
 
 func _on_message(msg):

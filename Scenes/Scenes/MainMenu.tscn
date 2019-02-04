@@ -1,12 +1,11 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Objects/Connections/TCPConnection.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Fonts/Heroes.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://Scripts/PlayBtn.gd" type="Script" id=4]
-[ext_resource path="res://Sprits/Menu/StartBtn.png" type="Texture" id=5]
-[ext_resource path="res://Sprits/Menu/ClickedStartBtn.png" type="Texture" id=6]
-[ext_resource path="res://Sprits/Menu/Mask.png" type="BitMap" id=7]
+[ext_resource path="res://Fonts/Heroes.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scripts/PlayBtn.gd" type="Script" id=3]
+[ext_resource path="res://Sprits/Menu/StartBtn.png" type="Texture" id=4]
+[ext_resource path="res://Sprits/Menu/ClickedStartBtn.png" type="Texture" id=5]
+[ext_resource path="res://Sprits/Menu/Mask.png" type="BitMap" id=6]
 
 [sub_resource type="ImageTexture" id=1]
 
@@ -23,7 +22,7 @@ outline_size = 0
 outline_color = Color( 1, 1, 1, 1 )
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 3 )
+font_data = ExtResource( 2 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
 [sub_resource type="StyleBoxFlat" id=3]
@@ -62,7 +61,7 @@ outline_color = Color( 1, 1, 1, 1 )
 use_mipmaps = false
 use_filter = false
 extra_spacing_bottom = -8
-font_data = ExtResource( 3 )
+font_data = ExtResource( 2 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
 [sub_resource type="StyleBoxFlat" id=5]
@@ -180,8 +179,6 @@ __meta__ = {
 "_editor_icon": SubResource( 1 )
 }
 
-[node name="TCPConnection" parent="Panel" instance=ExtResource( 2 )]
-
 [node name="PlayBtn" type="Button" parent="Panel"]
 anchor_left = 0.0
 anchor_top = 0.0
@@ -205,7 +202,7 @@ shortcut = null
 group = null
 flat = false
 align = 1
-script = ExtResource( 4 )
+script = ExtResource( 3 )
 _sections_unfolded = [ "Custom Colors", "Custom Fonts", "Size Flags", "custom_fonts", "custom_fonts/font" ]
 
 [node name="CharacterPnl" type="Panel" parent="Panel"]
@@ -404,14 +401,13 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 5 )
-texture_pressed = ExtResource( 6 )
-texture_click_mask = ExtResource( 7 )
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+texture_click_mask = ExtResource( 6 )
 expand = true
 _sections_unfolded = [ "Rect", "Textures", "texture_hover", "texture_normal" ]
 
 [node name="Sprite" type="Sprite" parent="Panel/Play_OLD"]
 _sections_unfolded = [ "Animation" ]
 
-[connection signal="on_message_received" from="Panel/TCPConnection" to="Panel/PlayBtn" method="_on_TCPConnection_on_message_received"]
 [connection signal="button_down" from="Panel/PlayBtn" to="Panel/PlayBtn" method="_on_PlayBtn_button_down"]

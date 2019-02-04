@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/Root.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Objects/Connections/UDPConnection.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Sprits/tree.png" type="Texture" id=3]
-[ext_resource path="res://Scenes/Objects/Logic.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sprits/tree.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Objects/Logic.tscn" type="PackedScene" id=3]
 
 [node name="Root" type="Node2D"]
 position = Vector2( 512, 300 )
@@ -14,8 +13,6 @@ __meta__ = {
 "_edit_vertical_guides_": [  ]
 }
 
-[node name="UDPConnection" parent="." instance=ExtResource( 2 )]
-
 [node name="YSort" type="YSort" parent="."]
 sort_enabled = true
 _sections_unfolded = [ "Sort", "Transform", "Z Index" ]
@@ -25,7 +22,7 @@ editor/display_folded = true
 visible = false
 position = Vector2( 209.176, 168.29 )
 scale = Vector2( 1.5544, 1.5544 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 centered = false
 offset = Vector2( -281.018, -552.726 )
 _sections_unfolded = [ "Offset", "Region", "Transform", "Z Index" ]
@@ -47,6 +44,5 @@ _sections_unfolded = [ "polygon" ]
 build_mode = 0
 polygon = PoolVector2Array( -144.07, -2.55301, -137.968, -3.10779, -126.595, -3.66257, -120.77, -1.99823, -120.77, 2.71741, -129.924, 3.82697, -137.69, 3.82697, -143.516, 0.498291 )
 
-[node name="Logic" parent="." instance=ExtResource( 4 )]
+[node name="Logic" parent="." instance=ExtResource( 3 )]
 
-[connection signal="on_message_received" from="UDPConnection" to="Logic" method="_on_message"]
