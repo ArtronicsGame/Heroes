@@ -24,7 +24,6 @@ func IsConnected():
 
 func Connect():
 	# Connect
-	print("Connecting")
 	connection = StreamPeerTCP.new()
 	connection.connect_to_host(ip, port)
 	
@@ -37,7 +36,7 @@ func Connect():
 	timer.start()
 	
 	# Proccess
-	print("Connected")
+	print("Connecting")
 	emit_signal("on_connection_established")
 	set_process(true)
 
@@ -45,6 +44,7 @@ func Connect():
 func OnClient():
 	# Connected
 	if (!connected && connection.get_status() == connection.STATUS_CONNECTED):
+		print("Connected")
 		connected = true
 		
 		peerstream = PacketPeerStream.new()
@@ -74,7 +74,9 @@ func _TimeoutDisconnect():
 	remove_child(timer)
 	
 	if (!connected):
-		Disconnect()
+		print("TimeOut")
+		emit_signal("on_time_out")
+
 
 func _process(delta):
 	OnClient()
