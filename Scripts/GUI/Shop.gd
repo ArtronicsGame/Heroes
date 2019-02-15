@@ -1,4 +1,4 @@
-extends MarginContainer
+extends Panel
 
 func _ready():
 	var e_container = get_node("VBoxContainer/EquipmentContainer/HBoxContainer")
