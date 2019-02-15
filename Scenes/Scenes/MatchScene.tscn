@@ -13,11 +13,11 @@ __meta__ = {
 "_edit_vertical_guides_": [  ]
 }
 
-[node name="YSort" type="YSort" parent="."]
+[node name="YSort" type="YSort" parent="." index="0"]
 sort_enabled = true
 _sections_unfolded = [ "Sort", "Transform", "Z Index" ]
 
-[node name="Tree" type="Sprite" parent="YSort"]
+[node name="Tree" type="Sprite" parent="YSort" index="0"]
 editor/display_folded = true
 visible = false
 position = Vector2( 209.176, 168.29 )
@@ -27,22 +27,25 @@ centered = false
 offset = Vector2( -281.018, -552.726 )
 _sections_unfolded = [ "Offset", "Region", "Transform", "Z Index" ]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="YSort/Tree"]
+[node name="StaticBody2D" type="StaticBody2D" parent="YSort/Tree" index="0"]
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
 _sections_unfolded = [ "Collision", "physics_material_override" ]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/Tree/StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/Tree/StaticBody2D" index="0"]
 build_mode = 0
 polygon = PoolVector2Array( -56.6927, -0.611267, -32.0051, -0.611267, 24.0276, -0.0565186, 48.9927, 2.99478, 89.4916, 9.09735, 112.792, 4.10434, 138.59, -2.83038, 140.254, -12.2617, 124.72, -16.6999, 105.58, -19.7512, 82.5568, -21.6929, 55.3726, -26.1311, 44.8318, -25.8537, 25.9694, -23.912, 10.713, -24.1894, -10.9235, -22.5251, -25.9025, -24.4668, -39.4946, -22.5251, -54.751, -18.3642, -58.0797, -12.539, -61.9631, -13.3712, -67.7883, -11.4295, -70.0074, -6.43646, -78.3291, -3.93994, -83.8769, -0.888672, -78.8839, 6.60083, -71.6718, 4.38171, -63.6275, 0.498291 )
 _sections_unfolded = [ "polygon" ]
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="YSort/Tree/StaticBody2D"]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="YSort/Tree/StaticBody2D" index="1"]
 build_mode = 0
 polygon = PoolVector2Array( -144.07, -2.55301, -137.968, -3.10779, -126.595, -3.66257, -120.77, -1.99823, -120.77, 2.71741, -129.924, 3.82697, -137.69, 3.82697, -143.516, 0.498291 )
 
-[node name="Logic" parent="." instance=ExtResource( 3 )]
+[node name="Logic" parent="." index="1" instance=ExtResource( 3 )]
 

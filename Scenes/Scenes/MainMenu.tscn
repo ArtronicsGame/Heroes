@@ -148,7 +148,7 @@ shadow_size = 0
 anti_aliasing = true
 anti_aliasing_size = 1
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" index="0"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -160,7 +160,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." index="0"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -179,7 +179,7 @@ __meta__ = {
 "_editor_icon": SubResource( 1 )
 }
 
-[node name="PlayBtn" type="Button" parent="Panel"]
+[node name="PlayBtn" type="Button" parent="Panel" index="0"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -205,7 +205,7 @@ align = 1
 script = ExtResource( 3 )
 _sections_unfolded = [ "Custom Colors", "Custom Fonts", "Size Flags", "custom_fonts", "custom_fonts/font" ]
 
-[node name="CharacterPnl" type="Panel" parent="Panel"]
+[node name="CharacterPnl" type="Panel" parent="Panel" index="1"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -221,7 +221,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="Username" type="Panel" parent="Panel"]
+[node name="Username" type="Panel" parent="Panel" index="2"]
 editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
@@ -240,7 +240,7 @@ size_flags_vertical = 1
 custom_styles/panel = SubResource( 3 )
 _sections_unfolded = [ "Custom Styles", "Material", "Rect", "Visibility", "custom_styles/panel" ]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Panel/Username"]
+[node name="CanvasLayer" type="CanvasLayer" parent="Panel/Username" index="0"]
 layer = 0
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -248,7 +248,7 @@ scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 _sections_unfolded = [ "Pause", "Script" ]
 
-[node name="Label" type="Label" parent="Panel/Username/CanvasLayer"]
+[node name="Label" type="Label" parent="Panel/Username/CanvasLayer" index="0"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -273,7 +273,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Custom Colors", "Custom Fonts", "Rect", "custom_fonts/font" ]
 
-[node name="Experience" type="Panel" parent="Panel"]
+[node name="Experience" type="Panel" parent="Panel" index="3"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -291,14 +291,14 @@ size_flags_vertical = 1
 custom_styles/panel = SubResource( 5 )
 _sections_unfolded = [ "Custom Styles", "Rect" ]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Panel/Experience"]
+[node name="CanvasLayer" type="CanvasLayer" parent="Panel/Experience" index="0"]
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="Label" type="Label" parent="Panel/Experience/CanvasLayer"]
+[node name="Label" type="Label" parent="Panel/Experience/CanvasLayer" index="0"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -315,7 +315,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Trophy" type="Panel" parent="Panel"]
+[node name="Trophy" type="Panel" parent="Panel" index="4"]
 modulate = Color( 1, 0.996078, 0.996078, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
@@ -334,14 +334,14 @@ size_flags_vertical = 1
 custom_styles/panel = SubResource( 6 )
 _sections_unfolded = [ "Custom Styles", "Rect", "Visibility" ]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Panel/Trophy"]
+[node name="CanvasLayer" type="CanvasLayer" parent="Panel/Trophy" index="0"]
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="Label" type="Label" parent="Panel/Trophy/CanvasLayer"]
+[node name="Label" type="Label" parent="Panel/Trophy/CanvasLayer" index="0"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -358,7 +358,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="MASHCoin" type="Panel" parent="Panel"]
+[node name="MASHCoin" type="Panel" parent="Panel" index="5"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -379,7 +379,7 @@ __meta__ = {
 "_editor_icon": SubResource( 1 )
 }
 
-[node name="Play_OLD" type="TextureButton" parent="Panel"]
+[node name="Play_OLD" type="TextureButton" parent="Panel" index="6"]
 editor/display_folded = true
 visible = false
 anchor_left = 0.0
@@ -407,7 +407,7 @@ texture_click_mask = ExtResource( 6 )
 expand = true
 _sections_unfolded = [ "Rect", "Textures", "texture_hover", "texture_normal" ]
 
-[node name="Sprite" type="Sprite" parent="Panel/Play_OLD"]
+[node name="Sprite" type="Sprite" parent="Panel/Play_OLD" index="0"]
 _sections_unfolded = [ "Animation" ]
 
 [connection signal="button_down" from="Panel/PlayBtn" to="Panel/PlayBtn" method="_on_PlayBtn_button_down"]
