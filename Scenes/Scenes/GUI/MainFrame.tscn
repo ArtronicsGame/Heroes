@@ -1,6 +1,8 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
 
-[node name="Control" type="Control"]
+[ext_resource path="res://Scripts/GUI/MainFrame.gd" type="Script" id=1]
+
+[node name="Control" type="Control" index="0"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -11,7 +13,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-_sections_unfolded = [ "Anchor", "Margin" ]
+script = ExtResource( 1 )
+_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
 [node name="Panel" type="Panel" parent="." index="0"]
 anchor_left = 0.0
@@ -42,9 +45,9 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_constants/separation = 0
 alignment = 1
-_sections_unfolded = [ "Custom Constants", "Margin", "Theme" ]
+_sections_unfolded = [ "Custom Constants", "Margin", "Rect", "Theme" ]
 
-[node name="Button" type="Button" parent="Panel/HBoxContainer" index="0"]
+[node name="ClansBtn" type="Button" parent="Panel/HBoxContainer" index="0"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -68,7 +71,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="Button2" type="Button" parent="Panel/HBoxContainer" index="1"]
+[node name="ChestsBtn" type="Button" parent="Panel/HBoxContainer" index="1"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -93,7 +96,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="Button3" type="Button" parent="Panel/HBoxContainer" index="2"]
+[node name="ItemsBtn" type="Button" parent="Panel/HBoxContainer" index="2"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -118,15 +121,14 @@ flat = false
 align = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="Button4" type="Button" parent="Panel/HBoxContainer" index="3"]
+[node name="HomeBtn" type="Button" parent="Panel/HBoxContainer" index="3"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 538.0
-margin_top = 1.0
-margin_right = 718.0
-margin_bottom = 94.0
+margin_left = 540.0
+margin_right = 720.0
+margin_bottom = 93.0
 rect_min_size = Vector2( 180, 0 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -144,7 +146,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="Button5" type="Button" parent="Panel/HBoxContainer" index="4"]
+[node name="ShopBtn" type="Button" parent="Panel/HBoxContainer" index="4"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -169,7 +171,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="Button6" type="Button" parent="Panel/HBoxContainer" index="5"]
+[node name="AuctionBtn" type="Button" parent="Panel/HBoxContainer" index="5"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -194,7 +196,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="Button7" type="Button" parent="Panel/HBoxContainer" index="6"]
+[node name="InAppBtn" type="Button" parent="Panel/HBoxContainer" index="6"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -219,3 +221,10 @@ flat = false
 align = 1
 _sections_unfolded = [ "Rect" ]
 
+[connection signal="pressed" from="Panel/HBoxContainer/ClansBtn" to="." method="_on_ClansBtn_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/ChestsBtn" to="." method="_on_ChestsBtn_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/ItemsBtn" to="." method="_on_ItemsBtn_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/HomeBtn" to="." method="_on_HomeBtn_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/ShopBtn" to="." method="_on_shopBtn_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/AuctionBtn" to="." method="_on_AuctionBtn_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/InAppBtn" to="." method="_on_InAppBtn_pressed"]

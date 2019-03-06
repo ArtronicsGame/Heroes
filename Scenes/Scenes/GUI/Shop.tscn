@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/GUI/Shop.gd" type="Script" id=1]
 
-[sub_resource type="StyleBoxFlat" id=10]
+[sub_resource type="StyleBoxFlat" id=1]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -31,12 +31,12 @@ anti_aliasing = true
 anti_aliasing_size = 1
 _sections_unfolded = [ "Border", "Border Width" ]
 
-[sub_resource type="DynamicFontData" id=7]
+[sub_resource type="DynamicFontData" id=10]
 
 hinting = 2
 font_path = "res://Fonts/Heroes.ttf"
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=11]
 
 size = 25
 outline_size = 0
@@ -44,22 +44,8 @@ outline_color = Color( 1, 1, 1, 1 )
 use_mipmaps = false
 use_filter = true
 extra_spacing_bottom = -9
-font_data = SubResource( 7 )
+font_data = SubResource( 10 )
 _sections_unfolded = [ "Extra Spacing", "Font", "font_data" ]
-
-[sub_resource type="StyleBoxEmpty" id=2]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
-
-[sub_resource type="StyleBoxEmpty" id=3]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
 
 [sub_resource type="StyleBoxEmpty" id=4]
 
@@ -82,6 +68,20 @@ content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
 
+[sub_resource type="StyleBoxEmpty" id=7]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+
 [sub_resource type="Theme" id=9]
 
 ColorPicker/constants/h_width = 30
@@ -98,20 +98,33 @@ HScrollBar/icons/decrement = null
 HScrollBar/icons/decrement_highlight = null
 HScrollBar/icons/increment = null
 HScrollBar/icons/increment_highlight = null
-HScrollBar/styles/grabber = SubResource( 2 )
-HScrollBar/styles/grabber_highlight = SubResource( 3 )
-HScrollBar/styles/grabber_pressed = SubResource( 4 )
-HScrollBar/styles/scroll = SubResource( 5 )
-HScrollBar/styles/scroll_focus = SubResource( 6 )
+HScrollBar/styles/grabber = SubResource( 4 )
+HScrollBar/styles/grabber_highlight = SubResource( 5 )
+HScrollBar/styles/grabber_pressed = SubResource( 6 )
+HScrollBar/styles/scroll = SubResource( 7 )
+HScrollBar/styles/scroll_focus = SubResource( 8 )
 _sections_unfolded = [ "H Scroll Bar", "Resource", "Styles" ]
 
-[node name="GUI" type="Panel" index="0"]
+[node name="ShopPage" type="Control"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 1280.0
-margin_bottom = 720.0
+margin_bottom = 627.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Margin", "Rect" ]
+
+[node name="Panel" type="Panel" parent="." index="0"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -119,16 +132,16 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 1 )
-_sections_unfolded = [ "Margin", "Rect" ]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." index="0"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" index="0"]
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 10.0
 margin_right = 1280.0
-margin_bottom = 720.0
+margin_bottom = 627.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -139,7 +152,7 @@ custom_constants/separation = 60
 alignment = 0
 _sections_unfolded = [ "Anchor", "Custom Constants", "Margin" ]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" index="0"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer" index="0"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -156,7 +169,7 @@ custom_constants/separation = 0
 alignment = 1
 _sections_unfolded = [ "Anchor", "Custom Constants", "Margin", "Theme" ]
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer" index="0"]
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer" index="0"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -171,8 +184,8 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_styles/normal = SubResource( 10 )
-custom_fonts/font = SubResource( 8 )
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = SubResource( 11 )
 text = "Mash"
 align = 1
 percent_visible = 1.0
@@ -180,7 +193,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "Custom Fonts", "Custom Styles", "Margin", "Material", "Rect", "Visibility", "custom_fonts/font", "custom_styles/normal" ]
 
-[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer" index="1"]
+[node name="Label2" type="Label" parent="Panel/VBoxContainer/HBoxContainer" index="1"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -195,8 +208,8 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_styles/normal = SubResource( 10 )
-custom_fonts/font = SubResource( 8 )
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = SubResource( 11 )
 text = "Mash"
 align = 1
 percent_visible = 1.0
@@ -204,7 +217,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "Custom Fonts", "Custom Styles", "Margin", "Material", "Rect", "Visibility", "custom_fonts/font", "custom_styles/normal" ]
 
-[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer" index="2"]
+[node name="Label3" type="Label" parent="Panel/VBoxContainer/HBoxContainer" index="2"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -219,8 +232,8 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_styles/normal = SubResource( 10 )
-custom_fonts/font = SubResource( 8 )
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = SubResource( 11 )
 text = "Mash"
 align = 1
 percent_visible = 1.0
@@ -228,7 +241,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "Custom Fonts", "Custom Styles", "Margin", "Material", "Rect", "Visibility", "custom_fonts/font", "custom_styles/normal" ]
 
-[node name="EquipmentContainer" type="ScrollContainer" parent="VBoxContainer" index="1"]
+[node name="EquipmentContainer" type="ScrollContainer" parent="Panel/VBoxContainer" index="1"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -251,7 +264,7 @@ scroll_vertical = 0
 scroll_deadzone = 0
 _sections_unfolded = [ "Material", "Theme", "Visibility", "custom_styles/bg", "theme" ]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/EquipmentContainer" index="0"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/EquipmentContainer" index="0"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -266,7 +279,7 @@ custom_constants/separation = 60
 alignment = 0
 _sections_unfolded = [ "Size Flags", "Theme", "theme" ]
 
-[node name="BoxContainer" type="ScrollContainer" parent="VBoxContainer" index="2"]
+[node name="BoxContainer" type="ScrollContainer" parent="Panel/VBoxContainer" index="2"]
 editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
@@ -289,7 +302,7 @@ scroll_vertical = 0
 scroll_deadzone = 0
 _sections_unfolded = [ "Rect" ]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/BoxContainer" index="0"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/BoxContainer" index="0"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
